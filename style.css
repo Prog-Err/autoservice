@@ -1,0 +1,264 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E0E0E0;
+
+}
+
+/* Стили для заголовка */
+.header {
+    background-color: white;
+    padding: 12px;
+    position: relative;
+    text-align: left;
+    border-bottom: 1px solid #57BADB;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+
+}
+
+.text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.header-icon {
+    width: 32px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Основной контент */
+main {
+    padding: 25px 6px;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    background-color: white;
+    border-radius: 6px;
+    margin-top: 75px;
+    height: max-content;
+}
+
+.filter-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.filter-box:hover {
+    background: #F0FBFF;
+}
+
+.filter-box.selected {
+    background: #33ADD6;
+    color: white;
+}
+
+.sidebar .filter-box:first-of-type {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.sidebar .filter-box:last-of-type {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.filter-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.all-icon {
+    background-image: url('/icons/All.svg');
+}
+
+.filter-box.selected .filter-icon.all-icon {
+    background-image: url('/icons/All-selected.svg');
+}
+
+.sedan-icon {
+    background-image: url('/icons/Sedan.svg');
+}
+
+.filter-box.selected .filter-icon.sedan-icon {
+    background-image: url('/icons/Sedan-selected.svg');
+}
+
+.hatchback-icon {
+    background-image: url('/icons/Hatchback.svg');
+}
+
+.filter-box.selected .filter-icon.hatchback-icon {
+    background-image: url('/icons/Hatchback-selected.svg');
+}
+
+.jeep-icon {
+    background-image: url('/icons/Jeep.svg');
+}
+
+.filter-box.selected .filter-icon.jeep-icon {
+    background-image: url('/icons/Jeep-selected.svg');
+}
+
+.card {
+    padding: 10px 00px 20px 20px;
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 15px;
+    width: 291px;
+    height: 497px;
+}
+
+.card-header {
+    display: flex;
+    margin-right: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button {
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background-image: url('/icons/Close.svg');
+}
+
+.close-button:hover {
+    background-image: url('/icons/CloseActive.svg');
+}
+
+#selectedFilter {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: -0.02em;
+    color: #828282;
+}
+
+.search-box {
+    margin-top: 10px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 2px 5px 2px 30px;
+    border-radius: 20px;
+    border: 1px solid #B2B2B2;
+    height: 23px;
+    color: #B2B2B2;
+    outline: none;
+    background: transparent;
+    background-image: url('/icons/Search.svg');
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    transition: background-image 0.1s;
+    outline: none;
+
+}
+
+#searchInput:hover {
+    border: 1px solid #33ADD6;
+    color: #33ADD6;
+    background-image: url('/icons/SearchHover.svg');
+}
+
+#searchInput:focus {
+    border: 1px solid #5E5E5E;
+    color: #5E5E5E;
+    background-image: url('/icons/SearchActive.svg');
+}
+
+#carList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+    overflow: auto;
+    height: 90%;
+}
+
+#carList::-webkit-scrollbar {
+    width: 7px;
+}
+
+#carList::-webkit-scrollbar-track {
+    background: #ECEDF1;
+    border-radius: 5px;
+}
+
+#carList::-webkit-scrollbar-thumb {
+    background: #33ADD6;
+    border-radius: 5px;
+}
+
+.car-card {
+    position: relative;
+    overflow: hidden;
+    width: 130px;
+    height: 120px;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+
+}
+
+.car-card:hover {
+    border: 1px solid #D7D7D7;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-image: url('/icons/Favourites.svg');
+    background-size: 17px;
+    width: 17px;
+    height: 17px;
+    display: none;
+}
+
+.car-card:hover .heart-icon {
+    display: block;
+}
+
+.car-card.selected {
+    border: 1px solid #47B0D4;
+}
+
+.car-image {
+    width: 116px;
+    max-height: 87px;
+    object-fit: cover;
+}
+
+.car-title {
+    color: #000000;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.06px;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
